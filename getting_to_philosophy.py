@@ -1,3 +1,5 @@
+#!/usr/local/bin/python3.9
+
 """
 This plays Getting To Philosophy, a Wikipedia game first described by
 user Mark J in May of 2008.
