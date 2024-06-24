@@ -20,11 +20,18 @@ class Philosophy:
         self.target_page = self.fetcher.fetch(target_article)
 
     def play(self, article_name):
+        """
+        The entrypoint to playing the game. Feed it an article and it will go!
+        """
         first_page = self.fetcher.fetch(article_name)
+
         return self.get_to_philosophy(first_page)
 
     def get_to_philosophy(self, current_page):
         """
+        If you define your own current_page object, the game can still be played,
+        but this may yield undefined results at this time.
+        
         Recursive solution to finding the target.
         """
         print(current_page.url)
