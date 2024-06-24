@@ -31,10 +31,9 @@ class Philosophy:
         """
         If you define your own current_page object, the game can still be played,
         but this may yield undefined results at this time.
-        
+
         Recursive solution to finding the target.
         """
-        print(current_page.url)
 
         # Exit if we've found the target, or if we're out of hops.
         if current_page is self.target_page:
@@ -47,6 +46,7 @@ class Philosophy:
         try:
             # Increment the hops, and find the next page.
             next_page = self.fetcher.fetch_next(current_page)
+            print(next_page.url)
             self.hops.append(next_page)
         except StopIteration:
             return ExitCode.DEAD_END
