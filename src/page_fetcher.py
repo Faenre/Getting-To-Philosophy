@@ -49,9 +49,7 @@ class PageFetcher:
 
     def __get(self, url):
         """
-        Given a possibly-relative page link,
-
-        returns html content or None
+        Given a possibly-relative page link, returns html content or None
         """
         try :
             api_url = self.__url_to_wiki_api(url)
@@ -73,8 +71,6 @@ class PageFetcher:
     def __shape_into_url(self, possibly_relative_link):
         if possibly_relative_link.startswith('https://en.wikipedia.org/wiki/'):
             return possibly_relative_link
-        # if possibly_relative_link.startswith('https://en.wikipedia.org/w/rest.php/v1/page/'):
-        #     return possibly_relative_link.split('/')[-2]
         if possibly_relative_link.startswith('/wiki/'):
             return HOST + possibly_relative_link
         if possibly_relative_link.startswith('./'):

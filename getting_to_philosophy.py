@@ -25,13 +25,6 @@ https://en.wikipedia.org/wiki/Wikipedia:Getting_to_Philosophy
 At present, only the English (en) localization is supported.
 """
 
-# Conditions
-# - Philosophy found --> return number of hops
-# - Bad page given   --> indicate to user
-# - Loop encountered --> triggered when a page has already been visited.
-#                        check the 2nd link, then 3rd, ...
-# - Dead end         --> return to parent and try again
-
 
 def parse_args():
     """Define and parse the command-line options."""
@@ -44,7 +37,6 @@ def parse_args():
     parser.add_argument('article', type=str,
         help='A Wikipedia URL or the name of a valid article to start from')
 
-    # Parse the arguments
     return parser.parse_args()
 
 

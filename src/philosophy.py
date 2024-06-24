@@ -32,7 +32,13 @@ class Philosophy:
         If you define your own current_page object, the game can still be played,
         but this may yield undefined results at this time.
 
-        Recursive solution to finding the target.
+
+        Conditions:
+        - Philosophy found --> return success
+        - Bad page given   --> indicate to user
+        - Loop encountered --> triggered when a page has already been visited.
+                               check the 2nd link, then 3rd, ...
+        - Dead end         --> return to parent and try again (handled on Page obj)
         """
 
         # Exit if we've found the target, or if we're out of hops.
