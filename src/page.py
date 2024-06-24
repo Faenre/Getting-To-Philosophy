@@ -31,10 +31,10 @@ class Page:
         # If we run out of links on the page, we've hit a dead-end.
         # Return the parent if it exists.
         if self.parent:
-            return self.parent
+            return self.parent.url
 
         # No parent and no remaining children means the iteration must end.
-        raise StopIteration
+        return None
 
     def __find_links(self):
         # Example: https://en.wikipedia.org/w/rest.php/v1/page/Jupiter/html
